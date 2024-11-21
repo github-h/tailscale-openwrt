@@ -39,7 +39,7 @@ esac
 if [ -e /tmp/tailscaled ]; then
     echo "INSTALL: ------------------"
     echo "存在残留, 请卸载并重启后重试"
-    echo "卸载命令: wget -qO- https://ghproxy.net/https://raw.githubusercontent.com/CH3NGYZ/tailscale-openwrt/chinese_mainland/uninstall.sh | sh"
+    echo "卸载命令: wget -qO- https://ghproxy.net/https://raw.githubusercontent.com/github-h/tailscale-openwrt/chinese_mainland/uninstall.sh | sh"
     echo "---------------------------"
     exit 1
 fi
@@ -71,12 +71,12 @@ download_success=false
 
 # 代理列表
 proxy_zip_urls="
-https://github.com/CH3NGYZ/tailscale-openwrt/raw/chinese_mainland/tailscale-openwrt.tgz
-https://jsd.proxy.aks.moe/gh/CH3NGYZ/tailscale-openwrt@chinese_mainland/tailscale-openwrt.tgz
-https://mirror.ghproxy.com/https://github.com/CH3NGYZ/tailscale-openwrt/raw/chinese_mainland/tailscale-openwrt.tgz
-https://ghproxy.net/https://github.com/CH3NGYZ/tailscale-openwrt/raw/chinese_mainland/tailscale-openwrt.tgz
-https://fastly.jsdelivr.net/gh/CH3NGYZ/tailscale-openwrt@chinese_mainland/tailscale-openwrt.tgz
-https://jsdelivr.pai233.top/gh/CH3NGYZ/tailscale-openwrt@chinese_mainland/tailscale-openwrt.tgz
+https://github.com/github-h/tailscale-openwrt/raw/chinese_mainland/tailscale-openwrt.tgz
+https://jsd.proxy.aks.moe/gh/github-h/tailscale-openwrt@chinese_mainland/tailscale-openwrt.tgz
+https://mirror.ghproxy.com/https://github.com/github-h/tailscale-openwrt/raw/chinese_mainland/tailscale-openwrt.tgz
+https://ghproxy.net/https://github.com/github-h/tailscale-openwrt/raw/chinese_mainland/tailscale-openwrt.tgz
+https://fastly.jsdelivr.net/gh/github-h/tailscale-openwrt@chinese_mainland/tailscale-openwrt.tgz
+https://jsdelivr.pai233.top/gh/github-h/tailscale-openwrt@chinese_mainland/tailscale-openwrt.tgz
 "
 
 for proxy_zip_url in $proxy_zip_urls; do
