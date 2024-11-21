@@ -1,9 +1,9 @@
 on:
- schedule:
-   - cron:  "10 23 * * *"
  workflow_dispatch:
- watch:
-    types: [started]
+# schedule:
+#   - cron:  "10 23 * * *"
+# watch:
+#    types: [started]
 
 jobs:
   sync_tailscale_latest_version:
@@ -15,8 +15,8 @@ jobs:
       - name: Check Repository Owner
         id: check_owner
         run: |
-          if [ "${{ github.repository_owner }}" != "CH3NGYZ" ]; then
-            echo "Repository owner is not CH3NGYZ. Cancelling the job."
+          if [ "${{ github.repository_owner }}" != "github-h" ]; then
+            echo "Repository owner is not github-h. Cancelling the job."
             exit 1
           fi
 
@@ -65,7 +65,7 @@ jobs:
         with:
           tag_name: ${{ env.latest_version }}
           name: ${{ env.latest_version }}
-          body: 版本 %${{ env.latest_version }}% 已从上游同步
+          body: Please refer to the changelog available at https://tailscale.com/changelog.
           draft: false
           prerelease: false
           files: |
