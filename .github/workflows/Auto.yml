@@ -1,4 +1,4 @@
-name: Auto
+name: Get Latest 
 
 on:
  workflow_dispatch:
