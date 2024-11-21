@@ -2,11 +2,11 @@
 set -e
 
 # 配置DNS
-cat <<EOF > /etc/resolv.conf
-search lan
-nameserver 223.5.5.5
-nameserver 119.29.29.29
-EOF
+#cat <<EOF > /etc/resolv.conf
+#search lan
+#nameserver 223.5.5.5
+#nameserver 119.29.29.29
+#EOF
 
 # 检查并设置架构
 if [ ! -f /tmp/tailscale ]; then
@@ -46,7 +46,7 @@ if [ ! -f /tmp/tailscale ]; then
 
     latest_version="not_available"
     version_timeout=10
-    version_url="CH3NGYZ/tailscale-openwrt/releases/latest"
+    version_url="github-h/tailscale-openwrt/releases/latest"
     version_proxys="https://mirror.ghproxy.com/https://github.com
                     https://www.ghproxy.cn/https://github.com
                     https://www.ghproxy.cc/https://github.com
@@ -86,7 +86,7 @@ if [ ! -f /tmp/tailscale ]; then
     fi
 
     version="${latest_version}_${arch}"
-    zip_url="CH3NGYZ/tailscale-openwrt/releases/download/${latest_version}/tailscale_${version}.tgz"
+    zip_url="github-h/tailscale-openwrt/releases/download/${latest_version}/tailscale_${version}.tgz"
 
     echo -e "tailscale_${version}/tailscale" > /tmp/tailscale_${version}_files.txt
     echo -e "tailscale_${version}/tailscaled" >> /tmp/tailscale_${version}_files.txt
